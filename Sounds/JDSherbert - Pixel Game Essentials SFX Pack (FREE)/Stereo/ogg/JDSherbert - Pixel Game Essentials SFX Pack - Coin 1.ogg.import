@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7dltmh54hnbj"
+path="res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Coin 1.ogg-9d1662a6a788ccf070fea18e353d4b3b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Stereo/ogg/JDSherbert - Pixel Game Essentials SFX Pack - Coin 1.ogg"
+dest_files=["res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Coin 1.ogg-9d1662a6a788ccf070fea18e353d4b3b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

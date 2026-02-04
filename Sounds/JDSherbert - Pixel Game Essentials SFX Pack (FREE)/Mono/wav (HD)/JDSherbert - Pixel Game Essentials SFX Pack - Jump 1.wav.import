@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cagj48l7em8i7"
+path="res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Jump 1.wav-99cf563ef95e37a6052812bb417b25cd.sample"
+
+[deps]
+
+source_file="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Mono/wav (HD)/JDSherbert - Pixel Game Essentials SFX Pack - Jump 1.wav"
+dest_files=["res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Jump 1.wav-99cf563ef95e37a6052812bb417b25cd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

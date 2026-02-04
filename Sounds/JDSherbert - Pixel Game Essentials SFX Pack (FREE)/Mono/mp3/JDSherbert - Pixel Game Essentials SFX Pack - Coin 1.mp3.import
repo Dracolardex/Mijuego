@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b186keb4wg6xe"
+path="res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Coin 1.mp3-0147b6e3a733e55916439f45171381ca.mp3str"
+
+[deps]
+
+source_file="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Mono/mp3/JDSherbert - Pixel Game Essentials SFX Pack - Coin 1.mp3"
+dest_files=["res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Coin 1.mp3-0147b6e3a733e55916439f45171381ca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

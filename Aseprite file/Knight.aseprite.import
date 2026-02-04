@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bnb4s4pc4e2ey"
+path="res://.godot/imported/Knight.aseprite-8fafe319ac523eba2ecdbc545c87454a.res"
+
+[deps]
+
+source_file="res://Aseprite file/Knight.aseprite"
+dest_files=["res://.godot/imported/Knight.aseprite-8fafe319ac523eba2ecdbc545c87454a.res"]
+
+[params]
+

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b6dcxv0sqx74o"
+path="res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Checkpoint 1.ogg-ee9435333c27bff4d2fab24608f5365c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Mono/ogg/JDSherbert - Pixel Game Essentials SFX Pack - Checkpoint 1.ogg"
+dest_files=["res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Checkpoint 1.ogg-ee9435333c27bff4d2fab24608f5365c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

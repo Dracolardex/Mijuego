@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bd6c3tnvktrhq"
+path="res://.godot/imported/Swordsman.aseprite-82c9405bc8790bc13bad5a69ced21ce9.res"
+
+[deps]
+
+source_file="res://Aseprite file/Swordsman.aseprite"
+dest_files=["res://.godot/imported/Swordsman.aseprite-82c9405bc8790bc13bad5a69ced21ce9.res"]
+
+[params]
+

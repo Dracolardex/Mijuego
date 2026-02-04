@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://da3inaoymenc8"
+path="res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Box Break 1.ogg-4228ac380a23e3469622e5bba3e291ec.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Stereo/ogg/JDSherbert - Pixel Game Essentials SFX Pack - Box Break 1.ogg"
+dest_files=["res://.godot/imported/JDSherbert - Pixel Game Essentials SFX Pack - Box Break 1.ogg-4228ac380a23e3469622e5bba3e291ec.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://cxdw8hxrhmt5u"]
+
+[ext_resource type="Script" uid="uid://d4lfxxc6g8366" path="res://NPC_Mago/mago_batalla.gd" id="1_7uk3h"]
+[ext_resource type="Texture2D" uid="uid://dprj13swgcfk8" path="res://Characters(100x100)/Wizard/Wizard/Wizard-Idle.png" id="1_l6jbk"]
+[ext_resource type="Texture2D" uid="uid://bth7iol5nsbkp" path="res://Characters(100x100)/Wizard/Wizard/Wizard-Attack01.png" id="2_7uk3h"]
+[ext_resource type="AudioStream" uid="uid://d0trmwh0sbat0" path="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Mono/ogg/JDSherbert - Pixel Game Essentials SFX Pack - Powerup 2.ogg" id="3_1jdmb"]
+[ext_resource type="Texture2D" uid="uid://b06ksotdf35iy" path="res://Characters(100x100)/Wizard/Wizard/Wizard-Attack02.png" id="4_s5awa"]
+[ext_resource type="AudioStream" uid="uid://cc0suqls2k81c" path="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Mono/ogg/JDSherbert - Pixel Game Essentials SFX Pack - Damage 1.ogg" id="5_odjg1"]
+[ext_resource type="Texture2D" uid="uid://tb4s18wgxqtn" path="res://Flecha/Pixelart arrow icon pack 1.0.png" id="6_vm06r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cboi4"]
+size = Vector2(159.625, 113.625)
+
+[sub_resource type="Animation" id="Animation_t3f64"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_l6jbk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_l0tm6"]
+resource_name = "attack1"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_7uk3h")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_1jdmb")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_xeg5c"]
+resource_name = "attack2"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_s5awa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_odjg1")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_mmn4m"]
+resource_name = "idle"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_l6jbk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmx8i"]
+_data = {
+&"RESET": SubResource("Animation_t3f64"),
+&"attack1": SubResource("Animation_l0tm6"),
+&"attack2": SubResource("Animation_xeg5c"),
+&"idle": SubResource("Animation_mmn4m")
+}
+
+[node name="Mago_batalla" type="Node2D" unique_id=173526210]
+script = ExtResource("1_7uk3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=515638187]
+position = Vector2(4.9999847, -33.999985)
+scale = Vector2(4.9118743, 4.9118743)
+texture = ExtResource("1_l6jbk")
+flip_h = true
+hframes = 6
+
+[node name="Area2D" type="Area2D" parent="." unique_id=509928985]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=778027018]
+position = Vector2(1, -48)
+shape = SubResource("RectangleShape2D_cboi4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1887647604]
+libraries/ = SubResource("AnimationLibrary_gmx8i")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=385092033]
+
+[node name="Cursor" type="Sprite2D" parent="." unique_id=1884270025]
+visible = false
+position = Vector2(-203, -88)
+rotation = 1.5707964
+scale = Vector2(6.321063, 6.321063)
+texture = ExtResource("6_vm06r")
+hframes = 11
+vframes = 20
+frame = 11
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1964764281]
+offset_left = -72.0
+offset_top = -124.0
+offset_right = 78.59259
+offset_bottom = -105.0
+show_percentage = false
+
+[node name="Control" type="Control" parent="." unique_id=243092930]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1669564722]
+layout_mode = 0
+offset_left = 55.0
+offset_top = -76.0
+offset_right = 154.0
+offset_bottom = -10.0
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=2048723494]
+layout_mode = 2
+text = "Golpe"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer" unique_id=1421390665]
+layout_mode = 2
+text = "Hechizo"

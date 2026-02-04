@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bochxbs84tk3i"]
+
+[ext_resource type="Texture2D" uid="uid://c2fh2o0vxstax" path="res://PNG_n_Tiled/Bridges.png" id="1_yajja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yajja"]
+size = Vector2(222.5, 18)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1486224132]
+
+[node name="Bridges" type="Sprite2D" parent="." unique_id=1836380324]
+position = Vector2(15.561634, -19.999998)
+scale = Vector2(1.6140761, 1.8666668)
+texture = ExtResource("1_yajja")
+region_enabled = true
+region_rect = Rect2(497.68433, 271.61847, 139.73718, 45.67108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2037431219]
+position = Vector2(15.25, 11)
+shape = SubResource("RectangleShape2D_yajja")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=216101346]
+position = Vector2(16, -53)
+shape = SubResource("RectangleShape2D_yajja")
