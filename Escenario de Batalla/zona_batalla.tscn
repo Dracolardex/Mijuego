@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b57rki75gbg2e" path="res://Escenario de Batalla/Bosque.jpg" id="1_3ce5k"]
 [ext_resource type="Script" uid="uid://db7ng7owm21dd" path="res://Escenario de Batalla/zona_batalla.gd" id="1_lelgs"]
-[ext_resource type="PackedScene" uid="uid://kxhsm77efia6" path="res://Orco/orco_de_batalla.tscn" id="2_jl018"]
 [ext_resource type="PackedScene" uid="uid://cco0w8aj6nj3s" path="res://Player/player_batalla.tscn" id="3_lelgs"]
 [ext_resource type="PackedScene" uid="uid://cxdw8hxrhmt5u" path="res://NPC_Mago/mago_batalla.tscn" id="4_23pb0"]
 [ext_resource type="AudioStream" uid="uid://qlcle2sy6dw" path="res://Musica/Battle Theme 1.mp3" id="5_jl018"]
@@ -10,7 +9,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lelgs"]
 size = Vector2(228.5, 146)
 
-[node name="zona_batalla" type="Node2D" unique_id=845516432 groups=["zona_de_batalla"]]
+[sub_resource type="FontVariation" id="FontVariation_jl018"]
+resource_name = "Arial"
+
+[sub_resource type="LabelSettings" id="LabelSettings_lelgs"]
+font = SubResource("FontVariation_jl018")
+
+[node name="zona_batalla" type="Node2D" unique_id=845516432 groups=["transicion", "zona_de_batalla"]]
 script = ExtResource("1_lelgs")
 
 [node name="Bosque" type="Sprite2D" parent="." unique_id=183715139]
@@ -20,43 +25,77 @@ texture = ExtResource("1_3ce5k")
 
 [node name="Enemigos" type="Node2D" parent="." unique_id=1543822088]
 
-[node name="Orco_de_batalla" parent="Enemigos" unique_id=751464489 instance=ExtResource("2_jl018")]
-position = Vector2(250, 399)
+[node name="enemi001" type="Marker2D" parent="Enemigos" unique_id=65449366]
 
 [node name="Player" type="Node2D" parent="." unique_id=1274969255]
 
-[node name="Player_Batalla" parent="Player" unique_id=304962662 instance=ExtResource("3_lelgs")]
-position = Vector2(832, 324)
+[node name="jugador1" type="Marker2D" parent="Player" unique_id=1878800460]
 
-[node name="Mago_batalla" parent="Player" unique_id=173526210 instance=ExtResource("4_23pb0")]
-position = Vector2(835, 472)
+[node name="Player_Batalla" parent="Player/jugador1" unique_id=304962662 instance=ExtResource("3_lelgs")]
+position = Vector2(895, 325)
 
-[node name="Control" type="Control" parent="." unique_id=412879509]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 343.0
-offset_top = 264.0
-offset_right = 383.0
-offset_bottom = 304.0
+[node name="jugador2" type="Marker2D" parent="Player" unique_id=1186588062]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1414154181]
-layout_mode = 0
-offset_left = -25.0
-offset_top = -16.0
-offset_right = 58.0
-offset_bottom = 20.0
-
-[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=77395940]
-visible = false
-layout_mode = 2
-text = "Elegir"
+[node name="Mago_batalla" parent="Player/jugador2" unique_id=173526210 instance=ExtResource("4_23pb0")]
+position = Vector2(892, 488)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1830884327]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2024913177]
-position = Vector2(279.75, 341)
+position = Vector2(333, 357)
 shape = SubResource("RectangleShape2D_lelgs")
+
+[node name="Control" type="Control" parent="." unique_id=412879509]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 388.0
+offset_top = 328.0
+offset_right = 428.0
+offset_bottom = 368.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1414154181]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -11.0
+offset_right = 53.0
+offset_bottom = 25.0
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=77395940]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+text = "Elegir"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=794914646]
 position = Vector2(581, 397)
 stream = ExtResource("5_jl018")
+volume_db = -23.808
+
+[node name="PantallaGameOver" type="CanvasLayer" parent="." unique_id=1165604180]
+visible = false
+
+[node name="Fondo" type="ColorRect" parent="PantallaGameOver" unique_id=1062302012]
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.17254902, 0.17254902, 0.17254902, 0.827451)
+
+[node name="Label" type="Label" parent="PantallaGameOver" unique_id=1118830754]
+texture_filter = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 373.0
+offset_top = -43.0
+offset_right = -687.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.675, 4.675)
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_lelgs")
+
+[connection signal="child_exiting_tree" from="Enemigos/enemi001" to="." method="_on_enemi_001_child_exiting_tree"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]

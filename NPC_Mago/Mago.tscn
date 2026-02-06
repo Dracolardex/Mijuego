@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://fgykrux3f6g" path="res://Characters(100x100)/Wizard/Wizard/Wizard-Walk.png" id="5_mgumx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_crfs1"]
-radius = 4.6783624
+radius = 2.5647197
 
 [sub_resource type="Animation" id="Animation_wxc0q"]
 resource_name = "Idle"
@@ -114,7 +114,7 @@ _data = {
 &"Walk": SubResource("Animation_w3phg")
 }
 
-[node name="Mago" type="CharacterBody2D" unique_id=1746858963]
+[node name="Mago" type="CharacterBody2D" unique_id=1746858963 groups=["mago"]]
 script = ExtResource("1_axxsm")
 
 [node name="Wizard" type="Sprite2D" parent="." unique_id=832612374]

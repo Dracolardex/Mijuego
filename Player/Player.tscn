@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c2vdvqd772rg4" path="res://Player/player.gd" id="1_q3lat"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3lat"]
-radius = 16.374268
+radius = 15.242728
 
 [sub_resource type="Animation" id="Animation_vlldt"]
 resource_name = "Idle"
@@ -85,7 +85,10 @@ states/Walk/node = SubResource("AnimationNodeAnimation_5wa8t")
 states/Walk/position = Vector2(476, 56)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_p7tob"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_dm7nj"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_3mea3")]
 
-[node name="Player" type="CharacterBody2D" unique_id=387573184]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tok1r"]
+radius = 19.026299
+
+[node name="Player" type="CharacterBody2D" unique_id=387573184 groups=["player"]]
 collision_mask = 9
 script = ExtResource("1_q3lat")
 SPEED = 150.0
@@ -118,3 +121,11 @@ libraries/ = SubResource("AnimationLibrary_0j2ni")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=2044326055]
 tree_root = SubResource("AnimationNodeStateMachine_7v5gs")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1801661456]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=366668336]
+position = Vector2(1, -14)
+shape = SubResource("CircleShape2D_tok1r")

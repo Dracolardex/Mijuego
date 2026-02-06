@@ -4,53 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dprj13swgcfk8" path="res://Characters(100x100)/Wizard/Wizard/Wizard-Idle.png" id="1_l6jbk"]
 [ext_resource type="Texture2D" uid="uid://bth7iol5nsbkp" path="res://Characters(100x100)/Wizard/Wizard/Wizard-Attack01.png" id="2_7uk3h"]
 [ext_resource type="AudioStream" uid="uid://d0trmwh0sbat0" path="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Mono/ogg/JDSherbert - Pixel Game Essentials SFX Pack - Powerup 2.ogg" id="3_1jdmb"]
-[ext_resource type="Texture2D" uid="uid://bu5jr7hr0r8kr" path="res://Characters(100x100)/Wizard/Wizard/Wizard-DEATH.png" id="3_7uk3h"]
 [ext_resource type="Texture2D" uid="uid://b06ksotdf35iy" path="res://Characters(100x100)/Wizard/Wizard/Wizard-Attack02.png" id="4_s5awa"]
 [ext_resource type="AudioStream" uid="uid://cc0suqls2k81c" path="res://Sounds/JDSherbert - Pixel Game Essentials SFX Pack (FREE)/Mono/ogg/JDSherbert - Pixel Game Essentials SFX Pack - Damage 1.ogg" id="5_odjg1"]
+[ext_resource type="Texture2D" uid="uid://tb4s18wgxqtn" path="res://Flecha/Pixelart arrow icon pack 1.0.png" id="6_vm06r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cboi4"]
 size = Vector2(159.625, 113.625)
-
-[sub_resource type="Animation" id="Animation_1jdmb"]
-resource_name = "Muerto"
-length = 0.8
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_7uk3h")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
 
 [sub_resource type="Animation" id="Animation_t3f64"]
 length = 0.001
@@ -206,7 +165,6 @@ tracks/3/use_blend = true
 [sub_resource type="Animation" id="Animation_mmn4m"]
 resource_name = "idle"
 length = 0.6
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -247,15 +205,11 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gmx8i"]
 _data = {
-&"Muerto": SubResource("Animation_1jdmb"),
 &"RESET": SubResource("Animation_t3f64"),
 &"attack1": SubResource("Animation_l0tm6"),
 &"attack2": SubResource("Animation_xeg5c"),
 &"idle": SubResource("Animation_mmn4m")
 }
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jdmb"]
-bg_color = Color(0.6, 1, 0.6, 1)
 
 [node name="Mago_batalla" type="Node2D" unique_id=173526210]
 script = ExtResource("1_7uk3h")
@@ -268,6 +222,7 @@ flip_h = true
 hframes = 6
 
 [node name="Area2D" type="Area2D" parent="." unique_id=509928985]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=778027018]
 position = Vector2(1, -48)
@@ -278,17 +233,40 @@ libraries/ = SubResource("AnimationLibrary_gmx8i")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=385092033]
 
+[node name="Cursor" type="Sprite2D" parent="." unique_id=1884270025]
+visible = false
+position = Vector2(-203, -88)
+rotation = 1.5707964
+scale = Vector2(6.321063, 6.321063)
+texture = ExtResource("6_vm06r")
+hframes = 11
+vframes = 20
+frame = 11
+
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1964764281]
-offset_left = 75.0
-offset_top = -111.0
-offset_right = 225.59259
-offset_bottom = -92.0
-rotation = 3.1415927
-theme_override_styles/background = SubResource("StyleBoxFlat_1jdmb")
-value = 100.0
-fill_mode = 1
+offset_left = -72.0
+offset_top = -124.0
+offset_right = 78.59259
+offset_bottom = -105.0
 show_percentage = false
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="Control" type="Control" parent="." unique_id=243092930]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1669564722]
+layout_mode = 0
+offset_left = 55.0
+offset_top = -76.0
+offset_right = 154.0
+offset_bottom = -10.0
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=2048723494]
+layout_mode = 2
+text = "Golpe"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer" unique_id=1421390665]
+layout_mode = 2
+text = "Hechizo"

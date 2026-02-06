@@ -13,12 +13,20 @@ enum State{
 
 @export_category("Stats")
 @export var SPEED: float = 600.0
-
 var state: State = State.IDLE
 var move_direction: Vector2 = Vector2.ZERO
-
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_playback : AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
+
+func _ready():
+	add_to_group("player_mundo")
+	print("Player del mundo iniciado en grupo 'player_mundo'")
+	
+	if has_node("Area2D"):
+		$Area2D.add_to_group("player")
+		print("Area2D del player agregado al grupo 'player'")
+	else:
+		print("Player no tiene nodo Area2D - no detectará colisiones con enemigos")
 
 func _physics_process(_delta: float) -> void:
 	loop_de_movimiento()
@@ -34,14 +42,14 @@ func loop_de_movimiento() -> void:
 			$Soldado.flip_h = true
 		elif move_direction.x > 0:
 			$Soldado.flip_h = false
-
+	
 	if velocity.length() > 0 and state == State.IDLE:
 		state = State.WALK
 		update_animation()
 	elif velocity.length() == 0 and state == State.WALK:
 		state = State.IDLE
 		update_animation()
-	
+
 func update_animation() -> void:
 	match state:
 		State.IDLE:
