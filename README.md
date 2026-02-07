@@ -2,13 +2,14 @@
 
 **Desarrollador:** Cristian Guillen Niño  
 **Motor:** Godot Engine  
-**Plataforma:** Windows (offline)  
+**Plataforma:** Windows (offline) / Web (online)  
 **Idioma:** Español
 
 ## Enlaces
 
 - GitHub: https://github.com/Dracolardex/Mijuego
 - Itch.io: https://cristian-guillen.itch.io
+- **Jugar Online:** https://cristian-guillen.itch.io/beyond-the-dungueon
 
 ---
 
@@ -194,6 +195,14 @@ El proyecto enfrentó varios obstáculos durante su desarrollo:
 ---
 
 ## Instalación y Ejecución
+
+### Opción 1: Jugar Online (Recomendado)
+
+Puedes jugar directamente en tu navegador sin instalar nada:
+
+**[Jugar Beyond The Dungeon en itch.io](https://cristian-guillen.itch.io/beyond-the-dungueon)**
+
+### Opción 2: Instalación Local
 
 1. Clona este repositorio:
    ```bash
